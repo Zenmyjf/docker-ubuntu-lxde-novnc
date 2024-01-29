@@ -5,7 +5,7 @@ if [ -n "$VNC_PASSWORD" ]; then
 	x11vnc -storepasswd $(cat /.password1) /.password2
 	chmod 400 /.password*
 	sed -i 's/^command=x11vnc.*/& -rfbauth \/.password2/' /etc/supervisor/conf.d/supervisord.conf
-	export VNC_PASSWORD=ubuntu
+	export VNC_PASSWORD=ubuntu12
 fi
 
 if [ -n "$RESOLUTION" ]; then
@@ -60,6 +60,6 @@ chmod +x /usr/local/lib/web/frontend/static/websockify/run
 
 # clearup
 PASSWORD=ubuntu
-HTTP_PASSWORD=ubuntu
+HTTP_PASSWORD=ubuntu12
 
 exec /bin/tini -- /usr/bin/supervisord -n -c /etc/supervisor/supervisord.conf
