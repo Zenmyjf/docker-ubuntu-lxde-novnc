@@ -24,9 +24,6 @@ RUN 	apt-get install -y --no-install-recommends -qq \
 	papirus-icon-theme fonts-noto-cjk fonts-noto-cjk-extra obconf lxappearance-obconf \
 	&&	apt-get clean
 
-# Set VNC password for novnc
-RUN mkdir -p $HOME/.vnc && echo "novnc:123456" | chpasswd
-
 # Configure vscode extension --DISABLED: error on root
 #RUN 	code --install-extension mhutchie.git-graph \
 #	&&	code --install-extension eamodio.gitlens
